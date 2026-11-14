@@ -1,6 +1,6 @@
 // Service Worker (wird beim Build erzeugt). Hält alle Spieldateien offline bereit.
-const VERSION = '22-3ca949e-202611141720';
-const FILES = ["./","./assets/index-CGxFBcr1.css","./assets/index-szV6lnR5.js","./assets/park.exr-v_B6Jj-5.js","./assets/worker-DngACY29.js","./icon-192.png","./icon-512.png","./icon-maskable-512.png","./icon.svg","./index.html","./licenses/three.txt","./manifest.webmanifest"];
+const VERSION = '23-b80233e-202611141749';
+const FILES = ["./","./assets/index-6vjzfrMq.css","./assets/index-DJcHwLvd.js","./assets/park.exr-v_B6Jj-5.js","./assets/worker-D_t1xAWA.js","./icon-192.png","./icon-512.png","./icon-maskable-512.png","./icon.svg","./index.html","./licenses/three.txt","./manifest.webmanifest"];
 const CACHE = `nb3d-${VERSION}`;
 
 self.addEventListener('install', (event) => {
