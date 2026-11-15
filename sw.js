@@ -1,6 +1,6 @@
 // Service Worker (wird beim Build erzeugt). Hält alle Spieldateien offline bereit.
-const VERSION = '24-1efb7d3-202611141811';
-const FILES = ["./","./assets/index-6vjzfrMq.css","./assets/index-DMH9NvrZ.js","./assets/park.exr-v_B6Jj-5.js","./assets/worker-BWjDx6YZ.js","./icon-192.png","./icon-512.png","./icon-maskable-512.png","./icon.svg","./index.html","./licenses/three.txt","./manifest.webmanifest"];
+const VERSION = '27-4132253-202611151200';
+const FILES = ["./","./assets/basis_transcoder-VXdx5NbI.wasm","./assets/basis_transcoder-o4Hde_L7.js","./assets/index-6vjzfrMq.css","./assets/index-CPMG9zOx.js","./assets/park.exr-v_B6Jj-5.js","./assets/tex/building_color.ktx2","./assets/tex/building_normal.ktx2","./assets/tex/building_orm.ktx2","./assets/tex/terrain_color.ktx2","./assets/tex/terrain_normal.ktx2","./assets/tex/terrain_orm.ktx2","./assets/trees/trees.json","./assets/trees/trees_c.ktx2","./assets/trees/trees_n.ktx2","./assets/worker-BWjDx6YZ.js","./basis/basis_transcoder.js","./basis/basis_transcoder.wasm","./icon-192.png","./icon-512.png","./icon-maskable-512.png","./icon.svg","./index.html","./licenses/three.txt","./manifest.webmanifest"];
 const CACHE = `nb3d-${VERSION}`;
 
 self.addEventListener('install', (event) => {
