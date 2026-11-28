@@ -1,0 +1,27 @@
+# Legt aus dem Zweig apk-upload ein GitHub Release an (Teile zusammensetzen, Prüfsumme prüfen).
+# Quelle: scripts/godot/release.yml im privaten Repo, kopiert von scripts/godot/publish.sh.
+name: release
+on:
+  push:
+    branches: [apk-upload]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zusammensetzen und prüfen
+        run: |
+          NAME="$(cat NAME)"
+          cat parts/"$NAME".part* > "$NAME"
+          sha256sum -c SHA256
+      - name: Release anlegen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BUILD="$(cat BUILD)"; NAME="$(cat NAME)"; TAG="test-$BUILD"
+          gh release delete "$TAG" --cleanup-tag --yes -R "$GITHUB_REPOSITORY" || true
+          shopt -s nullglob
+          gh release create "$TAG" "$NAME" extra/* -R "$GITHUB_REPOSITORY" --target apk-upload \
+            --title "Test $BUILD" --notes-file NOTE --prerelease
